@@ -101,7 +101,7 @@ class FER(object):
             # use GPU is available
             import torch
             if torch.cuda.is_available() and torch.cuda.device_count() > 0:
-                device = torch.device('gpu')
+                device = torch.device('cuda')
                 self._mtcnn = MTCNN(keep_all=True, device=device)
             else:
                 self._mtcnn = MTCNN(keep_all=True)
